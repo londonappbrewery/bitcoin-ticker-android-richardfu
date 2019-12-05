@@ -45,6 +45,25 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         // TODO: Set an OnItemSelected listener on the spinner
+        spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
+
+            @Override
+            public void onItemSelected(AdapterView parent, View view, int position, long id) {
+
+//                Toast.makeText(MainActivity.this, "你選的是"+spinner01.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                Log.d("Bitcoin", "" + parent.getItemAtPosition(position));
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView arg0) {
+
+//                Toast.makeText(MainActivity.this, "您沒有選擇任何項目", Toast.LENGTH_LONG).show();
+                Log.d("Bitcoin", "Nothing selected");
+            }
+
+        });
 
     }
 
